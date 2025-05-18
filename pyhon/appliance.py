@@ -1,6 +1,7 @@
 import importlib
 import logging
 import re
+import asyncio
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Optional, Dict, Any, TYPE_CHECKING, List, TypeVar, overload
@@ -49,9 +50,10 @@ class HonAppliance:
         )
 
         try:
-            self._extra: Optional[ApplianceBase] = importlib.import_module(
-                f"pyhon.appliances.{self.appliance_type.lower()}"
-            ).Appliance(self)
+            module = await asyncio.to_thread(
+            importlib.import_module, f"pyhon.appliances.{self.appliance_type.lower()}"
+            )
+            self._extra: Optional[ApplianceBase] = module.Appliance(self)
         except ModuleNotFoundError:
             self._extra = None
 
