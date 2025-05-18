@@ -1,6 +1,7 @@
 from .connection.api import HonAPI
 from .hon import Hon
-
-print("Loaded pyhOn from NoUsername10's fork!")
+import logging
+_LOGGER = logging.getLogger(__name__)
+_LOGGER.debug("Loaded pyhOn from NoUsername10's fork!")
 
 __all__ = ["Hon", "HonAPI"]
