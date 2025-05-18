@@ -7,14 +7,13 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="pyhOn",
-    version="0.17.5",
-    author="Andre Basche",
+    version="1.02",
+    author="NoUsername10",
     description="Control hOn devices with python",
     long_description=long_description,
     long_description_content_type="text/markdown",
     project_urls={
-        "GitHub": "https://github.com/Andre0512/pyhOn",
-        "PyPI": "https://pypi.org/project/pyhOn",
+        "GitHub": "https://github.com/NoUsername10/pyhOn",
     },
     license="MIT",
     platforms="any",
